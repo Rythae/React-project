@@ -1,11 +1,12 @@
 import React from 'react'
 import Item from "./item"
+import "../styles/items.css"
 
 function Items({ items, setTaxTotal, setOrderTotal }) {
   let orderTotal = 0;
   let taxTotal = 0;
   return (
-    <div>
+    <div className="items-container">
       {items.map((item, index) => {
         const tax = (item.price * item.tax_pct * item.quantity) / 100;
         const net =

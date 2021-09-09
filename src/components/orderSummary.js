@@ -39,61 +39,47 @@ function OrderSummary(props) {
       <h1>Order Summary Page</h1>
       <div className="items-wrapper">
         <div>
-          <h1>Restaurant Details</h1>
           <ul className="order-details">
             <li>
-              <strong>Name</strong>:
               {orderDetails.restaurant && orderDetails.restaurant.name}
             </li>
             <li>
-              <strong>Street</strong>:
               {orderDetails.restaurant && orderDetails.restaurant.street}
             </li>
             <li>
-              <strong>City</strong>:
               {orderDetails.restaurant && orderDetails.restaurant.city}
             </li>
             <li>
-              <strong>State</strong>:
               {orderDetails.restaurant && orderDetails.restaurant.state}
             </li>
             <li>
-              <strong>Zipcode</strong>:
               {orderDetails.restaurant && orderDetails.restaurant.zipcode}
             </li>
           </ul>
-        </div>
-        <div>
-          <h1>Customer Details</h1>
+
           <ul className="order-details">
             <li>
-              <strong>Name</strong>:
               {customerDetails.user && customerDetails.user.name}
             </li>
             <li>
-              <strong>Phone</strong>:
               {customerDetails.user && customerDetails.user.phone}
             </li>
             <li>
-              <strong>About</strong>:
               {customerDetails.user && customerDetails.user.about}
             </li>
             <li>
-              <strong>Address</strong>:
               {customerDetails.user && customerDetails.user.address}
             </li>
             <li>
-              <strong>dislikes</strong>:
               {customerDetails.user && customerDetails.user.dislikes}
             </li>
             <li>
-              <strong>Likes</strong>:
               {customerDetails.user && customerDetails.user.likes}
             </li>
           </ul>
         </div>
         <div>
-          <h1>Items Details</h1>
+          <h3>Items Order Summary</h3>
           {!!itemDetails?.items?.length && (
             <Items
               items={itemDetails.items}

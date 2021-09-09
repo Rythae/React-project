@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/customerProfile.css";
 
-export default function CustomerProfile(props) {
+export default function CustomerProfile() {
   const [customerDetails, setCustomerDetails] = useState([]);
 
   const getCustomerDetails = () => {

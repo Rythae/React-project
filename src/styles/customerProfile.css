@@ -1,0 +1,41 @@
+.container {
+    width: 100%;
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+}
+
+.customer-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1500px;
+}
+
+.profile-details {
+    list-style-type: none;
+}
+
+.profile {
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    background-image: url(../images/blonde1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: contain;
+}
+
+.button {
+    display: inline-block;
+    border: none;
+    color: white;
+    background-color: #fe4acd;
+    font-size: 16px;
+    padding: 10px 14px;
+    border-radius: 100px;
+    cursor: pointer;
+}

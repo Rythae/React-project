@@ -1,3 +1,16 @@
 .item-container {
     margin-right: 3rem;
 }
+
+.table-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    width: 65rem;
+}
+
+.table-row {
+    /* width: 100%; */
+}
+

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Items from "./items";
 import "../styles/orderSummary.css";
+import CustomerDetails from "../components/customerDetails";
+
 
 function OrderSummary(props) {
-  const orderId = props.match.params.order_id;
+  // const orderId = props.match.params.order_id;
 
   const [orderDetails, setOrderDetails] = useState([]);
   const [orderTotal, setOrderTotal] = useState(0);
@@ -13,7 +15,7 @@ function OrderSummary(props) {
   const [itemDetails, setItemDetails] = useState([]);
 
   const getDetails = () => {
-    fetch(`https://indapi.kumba.io/webdev/assignment/?order_id=${orderId}`, {
+    fetch(`https://indapi.kumba.io/webdev/assignment`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -40,43 +42,15 @@ function OrderSummary(props) {
       <div className="items-wrapper">
         <div>
           <ul className="order-details">
-            <li>
-              {orderDetails.restaurant && orderDetails.restaurant.name}
-            </li>
-            <li>
-              {orderDetails.restaurant && orderDetails.restaurant.street}
-            </li>
-            <li>
-              {orderDetails.restaurant && orderDetails.restaurant.city}
-            </li>
-            <li>
-              {orderDetails.restaurant && orderDetails.restaurant.state}
-            </li>
+            <li>{orderDetails.restaurant && orderDetails.restaurant.name}</li>
+            <li>{orderDetails.restaurant && orderDetails.restaurant.street}</li>
+            <li>{orderDetails.restaurant && orderDetails.restaurant.city}</li>
+            <li>{orderDetails.restaurant && orderDetails.restaurant.state}</li>
             <li>
               {orderDetails.restaurant && orderDetails.restaurant.zipcode}
             </li>
           </ul>
-
-          <ul className="order-details">
-            <li>
-              {customerDetails.user && customerDetails.user.name}
-            </li>
-            <li>
-              {customerDetails.user && customerDetails.user.phone}
-            </li>
-            <li>
-              {customerDetails.user && customerDetails.user.about}
-            </li>
-            <li>
-              {customerDetails.user && customerDetails.user.address}
-            </li>
-            <li>
-              {customerDetails.user && customerDetails.user.dislikes}
-            </li>
-            <li>
-              {customerDetails.user && customerDetails.user.likes}
-            </li>
-          </ul>
+          <CustomerDetails customerDetails={customerDetails} />
         </div>
         <div>
           <h3>Items Order Summary</h3>
@@ -87,9 +61,9 @@ function OrderSummary(props) {
               setTaxTotal={setTaxTotal}
             />
           )}
-          <h2>{orderTotal}</h2>
-          <h2>{taxTotal}</h2>
-          <h2>Total bill: {orderTotal + taxTotal}</h2>
+          <h2>Total: {orderTotal}</h2>
+          <h2>Total Tax: {taxTotal}</h2>
+          <h2>Total Bill: {orderTotal + taxTotal}</h2>
         </div>
       </div>
       <Link to="/">

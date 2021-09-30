@@ -7,7 +7,7 @@ function App() {
   return (
     <Router>
       <Route exact path={"/"} component={CustomerProfile} />
-      <Route exact path={"/order/:orderId"} component={OrderSummary} />
+      <Route exact path={"/order"} component={OrderSummary} />
     </Router>
   );
 }
